@@ -40,10 +40,10 @@ export const getSingleRoom = async (req, res) => {
 
 export const getRooms = async (req, res) => {
     try {
-        const rooms = await roomModel.find({}).sort({ createdAt: -1 });
+        const allRooms = await roomModel.find({}).sort({ createdAt: -1 });
         res.status(200).send({
             status: "success",
-            data: rooms,
+            data: allRooms,
             message: "Successful"
         })
     } catch (err) {
