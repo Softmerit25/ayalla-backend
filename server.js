@@ -4,9 +4,12 @@ import mongoose from "mongoose";
 import cors from "cors";
 import helmet from "helmet";
 import multer from "multer";
-import path from "path";
+import{dirname, } from "path";
 import roomRouter from "./Routes/roomRoute.js";
+import { fileURLToPath } from "url";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -26,7 +29,7 @@ dotenv.config();
 app.use(cors({origin:'*'}));
 app.use(express.json());
 app.use(helmet());
-app.use("/images", express.static(path.join(import.meta.url, '/images')));
+app.use("/images", express.static((__dirname, '/images')));
 
 mongoose.set('strictQuery', true);
 const option = {
