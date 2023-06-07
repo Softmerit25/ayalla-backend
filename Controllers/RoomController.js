@@ -130,7 +130,7 @@ export const deleteSingleRoom = async (req, res) => {
         const singleRoom = await roomModel.findByIdAndDelete(req.params.id);
         res.status(200).send({
             status: "success",
-            message: "Room has been Deleted"
+            message: "Room has been sucessfully deleted..."
         })
     } catch (err) {
         res.status(403).send(`Something went wrong ${err}`)
