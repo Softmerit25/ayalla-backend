@@ -53,18 +53,41 @@ export const getRooms = async (req, res) => {
 }
 
 //GET ROOMS BY LOCATION
-export const getRoomByLocation = async (req, res) => {
-    const q = req.query;
-    const filter = {
-        roomlocation: { $regex: q.location, $options: 'i' }
-    }
+export const getAbujaRooms = async (req, res) => {
+    // const q = req.query;
+    // const filter = {
+    //     roomlocation: { $regex: q.location, $options: 'i' }
+    // }
+
     try {
-        const roomLocation = await roomModel.find(filter);
-        !roomLocation && res.status(404).send("Room not available in the specified location.");
+        const roomAbuja= await roomModel.find({roomlocation:'Abuja'});
+        !roomAbuja && res.status(404).send("Room not available in the specified location.");
 
         res.status(200).send({
             status: "success",
-            data: roomLocation,
+            data: roomAbuja,
+            message: "Successful"
+        })
+    } catch (err) {
+        res.status(402).send(`Something went wrong ${err}`)
+    }
+
+}
+
+
+export const getYenagoaRooms = async (req, res) => {
+    // const q = req.query;
+    // const filter = {
+    //     roomlocation: { $regex: q.location, $options: 'i' }
+    // }
+
+    try {
+        const roomYenagoa = await roomModel.find({roomlocation:'Yenagoa'});
+        !roomYenagoa && res.status(404).send("Room not available in the specified location.");
+
+        res.status(200).send({
+            status: "success",
+            data: roomYenagoa,
             message: "Successful"
         })
     } catch (err) {

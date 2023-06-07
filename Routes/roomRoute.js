@@ -1,4 +1,4 @@
-import { addRoom, deleteSingleRoom, getRoomByLocation, getRooms, getSingleRoom, updateRoom } from "../Controllers/RoomController.js";
+import { addRoom, deleteSingleRoom, getAbujaRooms, getRooms, getSingleRoom, getYenagoaRooms, updateRoom } from "../Controllers/RoomController.js";
 import { Router} from "express";
 
 const roomRouter = Router();
@@ -14,7 +14,10 @@ roomRouter.get("/room/:id", getSingleRoom);
 
 
 //GET ALL ROOMS BY LOCATION
-roomRouter.get("/location/", getRoomByLocation);
+roomRouter.get("/abuja/", getAbujaRooms);
+roomRouter.get("/yenagoa/", getYenagoaRooms);
+
+
 
 //UPDATE ROOM
 roomRouter.patch("/updateroom/:id", updateRoom);
