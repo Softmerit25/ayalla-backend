@@ -11,6 +11,8 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+const port = process.env.PORT || 8200;
+
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
       cb(null, 'images')
@@ -64,7 +66,7 @@ app.use("/", (req, res)=>{
 
 
 
-app.listen(8200, ()=>{
+app.listen(port, ()=>{
     connectDB();
      console.log('Server is running')
 });
