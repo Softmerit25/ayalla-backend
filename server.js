@@ -28,7 +28,7 @@ const app = express();
 dotenv.config();
 
 //middlewears
-app.use(cors({origin:'*'}));
+app.use(cors({origin:["http:localhost:3000", "https://ayalla.netlify.app"]}));
 app.use(express.json());
 app.use(helmet());
 app.use("/images", express.static((__dirname, '/images')));
