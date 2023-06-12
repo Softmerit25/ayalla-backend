@@ -74,7 +74,7 @@ export const newBooking = async (req, res) => {
                 <p style="font-size: 14px;"><span>Room Name: ${req.body.roomname}</span></p>
                 <p style="font-size: 14px;"><span>Room Price: ${req.body.roomprice}</span></p>
                 <p style="font-size: 14px;"><span>Room Quantity: ${req.body.qty}</span></p>
-                <p style="font-size: 14px;"><span>Total Amount: ${req.body.total}</span></p>
+                <p style="font-size: 14px;"><span>Total Amount: ${req.body.grandTotal}</span></p>
                 </div>
 
                 <div style="padding: 20px">
