@@ -28,8 +28,8 @@ const app = express();
 dotenv.config();
 
 //middlewears
-//app.use(cors({origin:["http:localhost:3000", "https://ayalla.netlify.app"]}));
-app.use(cors());
+app.use(cors({origin:["http:localhost:3000", "https://sore-cyan-ox-suit.cyclic.app", "https://ayalla.netlify.app"]}));
+//app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 app.use(helmet());
