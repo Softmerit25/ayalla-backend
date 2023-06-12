@@ -7,6 +7,7 @@ import multer from "multer";
 import{dirname, } from "path";
 import roomRouter from "./Routes/roomRoute.js";
 import { fileURLToPath } from "url";
+import bookingRouter from "./Routes/bookingRoute.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -60,7 +61,7 @@ app.post("/api/upload", upload.single('file'), (req, res)=>{
 
 //routes
 app.use("/api/v1", roomRouter);
-
+app.use("/api/v1", bookingRouter);
 
 app.use("/", (req, res)=>{
     res.send("Ayalla server has been hacked!")
