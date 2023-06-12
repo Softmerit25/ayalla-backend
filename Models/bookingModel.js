@@ -4,7 +4,7 @@ const bookingSchema = mongoose.Schema({
     roomname: { type: String,},
     roomprice: {type: Number,},
     qty: {type: Number},
-    total: {type: Number},
+    grandTotal: {type: Number},
     firstname: {type: String,  },
     lastname: {type: String, },
     email: {type: String, },
