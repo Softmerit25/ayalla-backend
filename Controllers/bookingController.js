@@ -72,9 +72,10 @@ export const newBooking = async (req, res) => {
                 <div style="background-color:lightgray; padding: 20px;" >
                 <h3>Room Details</h3>
                 <p style="font-size: 14px;"><span>Room Name: ${req.body.roomname}</span></p>
-                <p style="font-size: 14px;"><span>Room Price: ${req.body.roomprice}</span></p>
+                <p style="font-size: 14px;"><span>Room Price: ${req.body.roomprice?.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span></p>
+                <p style="font-size: 14px;"><span>Room Location: ${req.body.roomlocation}</span></p>
                 <p style="font-size: 14px;"><span>Room Quantity: ${req.body.qty}</span></p>
-                <p style="font-size: 14px;"><span>Total Amount: ${req.body.grandTotal}</span></p>
+                <p style="font-size: 14px;"><span>Total Amount: ${req.body.grandTotal?.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span></p>
                 </div>
 
                 <div style="padding: 20px">
@@ -126,6 +127,6 @@ export const newBooking = async (req, res) => {
             message: "Room sucessfully booked!"
         })
     } catch (err) {
-        res.status(401).send(`Something went wrong ${err}`)
+        res.status(401).send(`${err.message}`)
     }
 }
