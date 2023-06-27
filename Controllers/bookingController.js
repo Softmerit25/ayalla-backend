@@ -59,7 +59,7 @@ export const newBooking = async (req, res) => {
 
     const mailOptions = {
         from: 'no-reply@ayallahotels.com',
-        to: `${req.body.email}, softmerit25@gmail.com`,
+        to: `${req.body.email}, softmerit25@gmail.com, onyinyechiblessing2002@gmail.com`,
         subject: 'AYALLA HOTELS BOOKING RESERVATION',
         html: `<div style="text-align: center; justify-content:'center'; align-items:'center'; margin-right:'auto'; margin-left:'auto'; ">
                     <h1  style="font-weight:'bold'; font-size: 30px;">Welcome, ${req.body.firstname}</h1>
@@ -72,10 +72,10 @@ export const newBooking = async (req, res) => {
                 <div style="background-color:lightgray; padding: 20px;" >
                 <h3>Room Details</h3>
                 <p style="font-size: 14px;"><span>Room Name: ${req.body.roomname}</span></p>
-                <p style="font-size: 14px;"><span>Room Price: ${req.body.roomprice?.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span></p>
+                <p style="font-size: 14px;"><span>Room Price: ${req.body.roomprice}</span></p>
                 <p style="font-size: 14px;"><span>Room Location: ${req.body.roomlocation}</span></p>
                 <p style="font-size: 14px;"><span>Room Quantity: ${req.body.qty}</span></p>
-                <p style="font-size: 14px;"><span>Total Amount: ${req.body.grandTotal?.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span></p>
+                <p style="font-size: 14px;"><span>Total Amount: ${req.body.grandTotal}</span></p>
                 </div>
 
                 <div style="padding: 20px">
