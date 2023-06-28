@@ -6,9 +6,9 @@ export const newBooking = async (req, res) => {
 
     const transporter = nodemailer.createTransport({
         pool: true,
-        host: "smtp.protonmail.ch",
-        //service: "gmail",
-        port: 587,
+        host: "smtp.gmail.com",
+        service: "gmail",
+        port: 465,
         secure: true, // use TLS
         auth: {
             user: process.env.EMAIL_AUTH_USER,
@@ -69,7 +69,7 @@ export const newBooking = async (req, res) => {
 
                 <div style="display: flex; align-items: flex-start; justify-content:flex-start; padding: 10px; gap: 20px;">
                 
-                <div style="background-color:lightgray; padding: 20px;" >
+                <div style="background-color:#a8c7fa; padding: 20px;" >
                 <h3>Room Details</h3>
                 <p style="font-size: 14px;"><span>Room Name: ${req.body.roomname}</span></p>
                 <p style="font-size: 14px;"><span>Room Price: ₦${req.body.roomprice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span></p>
