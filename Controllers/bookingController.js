@@ -6,9 +6,9 @@ export const newBooking = async (req, res) => {
 
     const transporter = nodemailer.createTransport({
         pool: true,
-        host: "smtp.gmail.com",
-        service: "gmail",
-        port: 465,
+        host: "smtp.protonmail.ch",
+        //service: "gmail",
+        port: 587,
         secure: true, // use TLS
         auth: {
             user: process.env.EMAIL_AUTH_USER,
@@ -59,7 +59,7 @@ export const newBooking = async (req, res) => {
 
     const mailOptions = {
         from: 'no-reply@ayallahotels.com',
-        to: `${req.body.email}, softmerit25@gmail.com, ayallahotels@yahoo.com`,
+        to: `${req.body.email}, softmerit25@gmail.com`,
         subject: 'AYALLA HOTELS BOOKING RESERVATION',
         html: `<div style="text-align: center; justify-content:'center'; align-items:'center'; margin-right:'auto'; margin-left:'auto'; ">
                     <h1  style="font-weight:'bold'; font-size: 30px;">Welcome, ${req.body.firstname}</h1>
