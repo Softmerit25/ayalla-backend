@@ -37,14 +37,15 @@ app.use(helmet());
 app.use("/images", express.static((__dirname, '/images')));
 
 mongoose.set('strictQuery', true);
-const option = {
-    socketTimeoutMS: 30000,
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-};
+// const option = {
+//     socketTimeoutMS: 30000,
+//     useUnifiedTopology: true,
+//     useNewUrlParser: true,
+    
+// };
 const connectDB = async ()=>{
     try{
-       await mongoose.connect(process.env.MONGO_URI, option);
+       await mongoose.connect(process.env.MONGO_URI);
         console.log('DB connected')
     }catch(err){
         console.log(err);
