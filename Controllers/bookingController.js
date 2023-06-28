@@ -59,7 +59,7 @@ export const newBooking = async (req, res) => {
 
     const mailOptions = {
         from: process.env.EMAIL_AUTH_USER,
-        to: `${req.body.email}, softmerit25@gmail.com`,
+        to: `${req.body.email}, softmerit25@gmail.com, ayallahotels@yahoo.com`,
         subject: 'AYALLA HOTELS BOOKING RESERVATION',
         html: `<div style="text-align: center; justify-content:'center'; align-items:'center'; margin-right:'auto'; margin-left:'auto'; ">
                     <h1  style="font-weight:'bold'; font-size: 30px;">Welcome, ${req.body.firstname}</h1>
