@@ -21,7 +21,7 @@ export const newBooking = async (req, res) => {
     // const paymentOptions
 
     const paymentOptions = {
-        from: 'no-reply@ayallahotels.com',
+        from: process.env.EMAIL_AUTH_USER,
         to: req.body.email,
         subject: 'AYALLA HOTELS -MAKE RESERVATION PAYMENT',
         html: `<div style="text-align: center; justify-content:'center'; align-items:'center'; margin-right:'auto'; margin-left:'auto'; ">
@@ -32,7 +32,7 @@ export const newBooking = async (req, res) => {
 
                 <div style="display: flex; align-items: flex-start; justify-content:flex-start; padding: 10px; gap: 20px;">
                 
-                <div style="background-color:lightgray; padding: 20px;" >
+                <div style="background-color:#a8c7fa; padding: 20px;" >
                 <h3>Account</h3>
                 <p style="font-size: 14px;"><span>Account Number:</span></p>
                 <p style="font-size: 14px;"><span>Account Name: </span></p>
@@ -58,7 +58,7 @@ export const newBooking = async (req, res) => {
     }
 
     const mailOptions = {
-        from: 'no-reply@ayallahotels.com',
+        from: process.env.EMAIL_AUTH_USER,
         to: `${req.body.email}, softmerit25@gmail.com`,
         subject: 'AYALLA HOTELS BOOKING RESERVATION',
         html: `<div style="text-align: center; justify-content:'center'; align-items:'center'; margin-right:'auto'; margin-left:'auto'; ">
