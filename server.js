@@ -8,6 +8,8 @@ import{dirname, } from "path";
 import roomRouter from "./Routes/roomRoute.js";
 import { fileURLToPath } from "url";
 import bookingRouter from "./Routes/bookingRoute.js";
+import userRoutes from "./Routes/userRoute.js";
+import cookieParser from 'cookie-parser';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -32,9 +34,10 @@ dotenv.config();
 //app.use(cors({origin:["http:localhost:3000", "https://sore-cyan-ox-suit.cyclic.app", "https://ayalla.netlify.app"]}));
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({extended: true}));
 app.use(helmet());
 app.use("/images", express.static((__dirname, '/images')));
+app.use(cookieParser());
 
 mongoose.set('strictQuery', true);
 // const option = {
@@ -63,6 +66,8 @@ app.post("/api/upload", upload.single('file'), (req, res)=>{
 //routes
 app.use("/api/v1", roomRouter);
 app.use("/api/v1", bookingRouter);
+app.use("/api/v1", userRoutes);
+
 
 app.use("/", (req, res)=>{
     res.send("Ayalla server has been hacked!")
